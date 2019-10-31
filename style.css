@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit1 {
+  display: block;
+  width: 25%;
+}
+
+@media screen and (min-width: 760px) {
+}
