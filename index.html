@@ -8,6 +8,42 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="title">
+      <h1>Budget Buddy</h1>
+    </header>
+    <main>
+      <form class="budget" action="">
+        <label for="weeklyBudget"
+          >Weekly Budget
+          <input type="text" id="weeklyBudget" placeholder="400" />
+        </label>
+        <label for="purchasedItem"
+          >Purchased Item
+          <input type="text" id="purchasedItem" />
+        </label>
+        <label for="cost"
+          >Cost
+          <input type="text" id="cost" />
+        </label>
+
+        <input
+          type="radio"
+          id="entertainment"
+          name="category"
+          value="entertainment"
+        />
+        <label>Entertainment</label>
+        <input type="radio" id="food" name="category" value="food" />
+        <label>Food</label>
+        <input type="radio" id="clothing" name="category" value="clothing" />
+        <label>Clothing</label>
+        <input type="radio" id="bills" name="category" value="bills" />
+        <label>Bills</label>
+      </form>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- form will have to reset on submit of purchase text area -->
