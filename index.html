@@ -13,16 +13,16 @@
     </header>
     <main>
       <form class="budget" action="">
-        <label for="weeklyBudget"
+        <input type="text" id="weeklyBudget" placeholder="400" /><label
+          for="weeklyBudget"
           >Weekly Budget
-          <input type="text" id="weeklyBudget" placeholder="400" />
         </label>
+        <input type="submit" value="submit" class="submit1" />
         <label for="purchasedItem"
           >Purchased Item
           <input type="text" id="purchasedItem" />
         </label>
-        <label for="cost"
-          >Cost
+        <label for="cost">
           <input type="text" id="cost" />
         </label>
 
@@ -31,14 +31,23 @@
           id="entertainment"
           name="category"
           value="entertainment"
-        />
-        <label>Entertainment</label>
+        /><label for="entertainment">Entertainment</label>
+
         <input type="radio" id="food" name="category" value="food" />
-        <label>Food</label>
-        <input type="radio" id="clothing" name="category" value="clothing" />
-        <label>Clothing</label>
-        <input type="radio" id="bills" name="category" value="bills" />
-        <label>Bills</label>
+        <label for="food">Food</label>
+
+        <input
+          type="radio"
+          id="clothing"
+          name="category"
+          value="clothing"
+        /><label for="clothing">Clothing</label>
+
+        <input type="radio" id="bills" name="category" value="bills" /><label
+          for="bills"
+          >Bills</label
+        >
+        <input type="submit" value="submit" />
       </form>
     </main>
 
@@ -47,3 +56,4 @@
 </html>
 
 <!-- form will have to reset on submit of purchase text area -->
+<!-- must have filled out purchase cost and radio button to submit -->
