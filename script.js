@@ -11,16 +11,15 @@ function getBudgetAmt(e) {
   e.preventDefault();
   console.log("function ran!");
   let budgetAmt = document.getElementById("weeklyBudget");
-
+  let elMsg = document.querySelector(".displayBudget");
   if (budgetAmt.value > 0) {
-    let elMsg = document.querySelector(".displayBudget");
-    elMsg.innerText = `You have ${budgetAmt} left to spend this week.`;
-  } else
-    elMsg.innerText = `You have no money left  you are broke. Stop spending money`;
+    elMsg.innerText = `You have ${budgetAmt.value} left to spend this week.`;
+  } else {
+    elMsg.innerText = `You have no money left. You are broke. Stop spending money`;
+  }
 
   budget.style.display = "none";
-
-  // Alicia, put your code here :D
+  elMsg.style.display = "block";
 }
 let budget = document.querySelector(".budget");
 budget.addEventListener("submit", getBudgetAmt);
