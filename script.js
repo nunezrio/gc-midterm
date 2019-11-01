@@ -24,6 +24,7 @@ function getBudgetAmt(e) {
 let budget = document.querySelector(".budget");
 budget.addEventListener("submit", getBudgetAmt);
 
+
 // function calcTotal () {
 //     let budgetInput = document.querySelector(".budget").weeklyBudget.value;
 //     budgetInput - (this.bills + this.clothes + this.food + this.entertainment)
