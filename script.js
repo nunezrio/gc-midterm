@@ -15,10 +15,11 @@ function getBudgetAmt(e) {
   if (budgetAmt.value > 0) {
     let elMsg = document.querySelector(".displayBudget");
     elMsg.innerText = `You have ${budgetAmt} left to spend this week.`;
-  } else elMsg = `You have no money left  you are broke. Stop spending money`;
+  } else
+    elMsg.innerText = `You have no money left  you are broke. Stop spending money`;
 
-  const displayBudget = document.querySelector(".displayBudget");
   budget.style.display = "none";
+
   // Alicia, put your code here :D
 }
 let budget = document.querySelector(".budget");
