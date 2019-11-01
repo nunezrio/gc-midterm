@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+
 body {
   background-color: #f7f7ff;
   color: #495867;
+  font-family: "Noto Sans";
 }
 form {
   display: flex;
@@ -27,18 +30,21 @@ h1 {
 .weeklyBudget input[type="text"] {
   width: 100%;
   margin: 10px 0px;
-  padding: 10px 0px;
+  padding: 10px 5px;
   border-radius: 5px;
   border: none;
+  box-sizing: border-box;
 }
 
 .displayBudget {
   background-color: #bdd5ea;
-  padding: 20px;
+  padding: 35px 5px;
   border-radius: 5px;
-  margin: auto;
-  width: 70%;
+  margin: 50px auto 30px auto;
+  width: 68%;
+  text-align: center;
   display: none;
+  font-size: 20px;
 }
 
 .submit {
@@ -48,6 +54,7 @@ h1 {
   border: none;
   background-color: #fe5f55;
   color: #f7f7ff;
+  cursor: pointer;
 }
 
 label {
@@ -63,10 +70,11 @@ label {
 
 .newItem input[type="text"] {
   border: none;
-  padding: 10px 0px;
-  margin: 5px 0px;
+  padding: 10px 5px;
+  margin: 5px auto;
   border-radius: 5px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .radio {
@@ -78,6 +86,10 @@ label {
 .itemInput {
   display: flex;
   flex-direction: column;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #fe5f55;
 }
 
 h2 {
