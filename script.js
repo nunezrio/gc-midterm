@@ -20,6 +20,8 @@ function getBudgetAmt(e) {
   const displayBudget = document.querySelector(".displayBudget");
   budget.style.display = "none";
   // Alicia, put your code here :D
+  } else
+    elMsg.innerText = `You have no money left  you are broke. Stop spending money`;
 }
 let budget = document.querySelector(".budget");
 budget.addEventListener("submit", getBudgetAmt);
