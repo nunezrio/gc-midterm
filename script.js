@@ -19,10 +19,11 @@ function getBudgetAmt(e) {
   }
 
   budget.style.display = "none";
-  // Alicia, put your code here :D
+  elMsg.style.display = "block";
 }
 let budget = document.querySelector(".budget");
 budget.addEventListener("submit", getBudgetAmt);
+
 
 // function calcTotal () {
 //     let budgetInput = document.querySelector(".budget").weeklyBudget.value;
