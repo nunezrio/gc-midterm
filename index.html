@@ -13,41 +13,67 @@
     </header>
     <main>
       <form class="budget" action="">
-        <input type="text" id="weeklyBudget" placeholder="400" /><label
-          for="weeklyBudget"
-          >Weekly Budget
-        </label>
-        <input type="submit" value="submit" class="submit1" />
-        <label for="purchasedItem"
-          >Purchased Item
-          <input type="text" id="purchasedItem" />
-        </label>
-        <label for="cost">
-          <input type="text" id="cost" />
-        </label>
+        <div class="weeklyBudget">
+          <h2>What is your weekly budget?</h2>
+          <input type="text" id="weeklyBudget" placeholder="Weekly budget" />
 
-        <input
-          type="radio"
-          id="entertainment"
-          name="category"
-          value="entertainment"
-        /><label for="entertainment">Entertainment</label>
+          <input type="submit" value="submit" class="submit" />
+        </div>
+      </form>
+      <form class="purchases">
+        <span class="newItem">
+          <h2>Add a purchase</h2>
+          <div class="itemInput">
+            <label for="purchasedItem"
+              >Item
+              <input type="text" id="purchasedItem" />
+            </label>
+            <label for="cost"
+              >Cost
+              <input type="text" id="cost" />
+            </label>
+          </div>
+          <div class="radio">
+            <label for="category">Category</label>
+            <label for="entertainment"
+              ><input
+                type="radio"
+                id="entertainment"
+                name="category"
+                value="entertainment"
+              />Entertainment</label
+            >
 
-        <input type="radio" id="food" name="category" value="food" />
-        <label for="food">Food</label>
+            <label for="food"
+              ><input
+                type="radio"
+                id="food"
+                name="category"
+                value="food"
+              />Food</label
+            >
 
-        <input
-          type="radio"
-          id="clothing"
-          name="category"
-          value="clothing"
-        /><label for="clothing">Clothing</label>
+            <label for="clothing">
+              <input
+                type="radio"
+                id="clothing"
+                name="category"
+                value="clothing"
+              />Clothing</label
+            >
 
-        <input type="radio" id="bills" name="category" value="bills" /><label
-          for="bills"
-          >Bills</label
-        >
-        <input type="submit" value="submit" />
+            <label for="bills"
+              ><input
+                type="radio"
+                id="bills"
+                name="category"
+                value="bills"
+              />Bills</label
+            >
+          </div>
+
+          <input type="submit" value="submit" class="submit" />
+        </span>
       </form>
     </main>
 
