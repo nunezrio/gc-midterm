@@ -7,6 +7,36 @@ class Budget {
     let expense = new Item(description, cost, category);
     this.items.push(expense);
   }
+
+  getTotal() {
+    let total = 0;
+    this.items.forEach(item => {
+      total += Number(item.cost);
+    });
+    console.log(total);
+    return total;
+  }
+
+  categoryTotals() {
+    let categoryTotals = {
+      entertainment: 0,
+      food: 0,
+      clothing: 0,
+      bills: 0
+    };
+    this.items.forEach(item => {
+      if (item.category === "entertainment") {
+        categoryTotals.entertainment += Number(item.cost);
+      } else if (item.category === "food") {
+        categoryTotals.food += Number(item.cost);
+      } else if (item.category === "clothing") {
+        categoryTotals.clothing += Number(item.cost);
+      } else {
+        categoryTotals.bills += Number(item.cost);
+      }
+    });
+    return categoryTotals;
+  }
 }
 
 class Item {
@@ -25,9 +55,9 @@ function getBudgetAmt(e) {
   let budgetAmtEl = document.getElementById("weeklyBudget");
   let elMsg = document.querySelector(".displayBudget");
   if (budgetAmtEl.value > 0) {
-    elMsg.innerText = `You have ${budgetAmtEl.value} left to spend this week.`;
+    elMsg.innerText = `You have $${budgetAmtEl.value} left to spend this week.`;
   } else {
-    elMsg.innerText = `You have no money left. You are broke. Stop spending money`;
+    elMsg.innerText = `You have no money left. You are broke. Stop spending money.`;
   }
 
   budgetForm.style.display = "none";
@@ -35,74 +65,49 @@ function getBudgetAmt(e) {
 
   budget.weeklyBudget = parseFloat(budgetAmtEl.value);
 
-  // converts string to number
-
   console.log(weeklyBudget);
-
-  // set the weeklyBudget property of the budget object using the value
-  // from the budgetAmtEl.
-  // let weeklyBudget.value =
 
   console.log(budget);
 
   budgetForm.style.display = "none";
-  // Alicia, put your code here :D
 }
 let budgetForm = document.querySelector(".budget");
 budgetForm.addEventListener("submit", getBudgetAmt);
 
-// function calcTotal () {
-//     let budgetInput = document.querySelector(".budget").weeklyBudget.value;
-//     budgetInput - (this.bills + this.clothes + this.food + this.entertainment)
-//
-// }
+let item = new Item();
 
-// }
+const purchaseFormEl = document.querySelector(".purchases");
 
-// Classes for Purchases and Item
+purchaseFormEl.addEventListener("submit", addExpense);
 
-const expense = document.querySelector(".purchases");
-console.log(expense);
-expense.addEventListener("submit", e => {
+function addExpense(e) {
   e.preventDefault();
-  console.log(expense);
-  const expenseData = new Purchases(expense);
-  add(
-    expenseData.get("category"), // access input values by name
-    expenseData.get("cost")
+  const purchaseFormData = new FormData(purchaseFormEl);
+  budget.add(
+    purchaseFormData.get("item"),
+    purchaseFormData.get("cost"),
+    purchaseFormData.get("category")
   );
-  // form.reset(); // clears the form
-  clg(expense);
-});
+  console.log(budget);
+  purchaseFormEl.reset();
 
-// const expense = new Purchases();
+  let remaining = Number(budget.weeklyBudget) - Number(budget.getTotal());
+  console.log(remaining);
 
-// expense.add("Movie Tickets", "20", "Entertainment");
-// console.log(expense);
+  let elMsg = document.querySelector(".displayBudget");
+  if (remaining > 0) {
+    elMsg.innerText = `You have $${remaining} left to spend this week.`;
+  } else {
+    elMsg.innerText = `You have no money left. You are broke. Stop spending money`;
+  }
+  let categoryTotals = budget.categoryTotals();
 
-// let radios = document.getElementsByClassName('itemInput');
-
-// for (let i = 0, length = radios.length; i < length; i++) {
-//     if (radios[i].checked) {
-//         add(radios[i].value);
-
-//     }
-
-const expenseList = document.createElement("div");
-expenseList.classList.add("expenses");
-
-const formData = new Item();
-
-// function purchasesDisplay() {
-//   expense.category.forEach((category, cost) => {
-//     const newExpense = document.createElement("div");
-//     newExpense.classList.add("expense");
-//     newExpense.innerText = `
-//       <p>Name: ${contact.name}</p>
-//       <p>Email: ${contact.email}</p>
-//       <p>Phone: ${contact.phone}</p>
-//       <p>Relation: ${contact.relation}</p>
-//       <i class="fa fa-trash" data-index-number=${index}" aria-hidden="true"></li>`;
-//     document.querySelector("#contact-list").appendChild(newEntry);
-//   });
-// }
+  let entertainment = document.querySelector(".displayEntertainment");
+  entertainment.innerText = `Entertainment: $${categoryTotals.entertainment}`;
+  let food = document.querySelector(".displayFood");
+  food.innerText = `Food: $${categoryTotals.food}`;
+  let clothing = document.querySelector(".displayClothing");
+  clothing.innerText = `Clothing: $${categoryTotals.clothing}`;
+  let bills = document.querySelector(".displayBills");
+  bills.innerText = `Bills: $${categoryTotals.bills}`;
+}
