@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Budget Buddy</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="title">
@@ -14,33 +15,42 @@
     <main>
         <form class="budget" action="">
           <div class="weeklyBudget">
+            <div class="mascotTitle">
+            <img src="piggie.png" class="pig" alt="fox">
+          
             <h2>What is your weekly budget?</h2>
-            <input type="text" id="weeklyBudget" placeholder="Weekly budget" />
-            <input type="submit" value="submit" class="submit" />
+          </div>
+          <div class="dollarSign">
+            <i class="fas fa-dollar-sign"></i>
+            <input type="text" id="weeklyBudget" placeholder="" /></div>
+            <input type="submit" value="confirm" class="submit" />
         </form>
       </div>
       
-      <div class='displayBudget'></div>
+      <div class='displayBudget'>
+          <img src="piggie.png" class="pig" alt="pig">
+      </div>
 
       <form class="purchases">
         <span class="newItem">
-          <h2>Add a purchase</h2>
+          <h2>How did you spend your hard earned money?</h2>
           <div class="itemInput">
+             
             <label for="purchasedItem"
               >Item
-              <input type="text" id="purchasedItem" />
+              <input type="text" id="purchasedItem"/>
             </label>
             
             <label for="cost"
-              >Cost 
-              <i class="fas fa-dollar-sign"></i>
-              <input type="text" id="cost" />
+              >
+              <div class="dollarSign">
+                <i class="fas fa-dollar-sign"></i>
+              <input type="text" id="cost"/>
             </label>
-           
-          </div>
+           </div>
           
-          <div class="radio">
-            <label for="category">Category</label>
+          <div class="piggie_radio">
+            <label for="category"></label>
             <label for="entertainment"
               ><input
                 type="radio"
@@ -76,13 +86,19 @@
                 value="bills"
               />Bills</label
             >
-          </div>
-
-          <input type="submit" value="submit" class="submit" />
+          
+  <img src="piggie_question.png" class= "piggie_question" alt="piggie with a question mark">
+</div>
+          <input type="submit" value="confirm" class="submit" />
         </span>
       </form>
     </main>
-
+<div class="categories">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
     <script src="script.js"></script>
   </body>
   <script src="https://kit.fontawesome.com/3ad212d20d.js" crossorigin="anonymous"></script>
