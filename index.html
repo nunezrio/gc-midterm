@@ -6,51 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Budget Buddy</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="title">
       <h1>Budget Buddy</h1>
     </header>
     <main>
-        <form class="budget" action="">
-          <div class="weeklyBudget">
-            <div class="mascotTitle">
-            <img src="piggie.png" class="pig" alt="fox">
-          
+      <form class="budget" action="">
+        <span class="weeklyBudget">
+          <div class="mascotTitle">
+            <img src="piggie.png" class="pig" alt="fox" />
+
             <h2>What is your weekly budget?</h2>
           </div>
-          <div class="dollarSign">
-            <i class="fas fa-dollar-sign"></i>
-            <input type="text" id="weeklyBudget" placeholder="" /></div>
-            <input type="submit" value="confirm" class="submit" />
-        </form>
-      </div>
-      
-      <div class='displayBudget'>
-          <img src="piggie.png" class="pig" alt="pig">
+          <input type="text" id="weeklyBudget" placeholder="&#xf155" />
+
+          <input type="submit" value="confirm" class="submit" />
+        </span>
+      </form>
+
+      <div class="displayBudget">
+        <img src="piggie.png" class="pig" alt="pig" />
       </div>
 
       <form class="purchases">
         <span class="newItem">
           <h2>How did you spend your hard earned money?</h2>
           <div class="itemInput">
-             
             <label for="purchasedItem"
               >Item
-              <input type="text" id="purchasedItem"/>
+              <input type="text" id="purchasedItem" />
             </label>
-            
-            <label for="cost"
-              >
-              <div class="dollarSign">
-                <i class="fas fa-dollar-sign"></i>
-              <input type="text" id="cost"/>
+            <label for="cost">
+              <input type="text" id="cost" placeholder="&#xf155" />
             </label>
-           </div>
-          
-          <div class="piggie_radio">
-            <label for="category"></label>
+          </div>
+
+          <div class="radio">
             <label for="entertainment"
               ><input
                 type="radio"
@@ -86,22 +82,31 @@
                 value="bills"
               />Bills</label
             >
-          
-  <img src="piggie_question.png" class= "piggie_question" alt="piggie with a question mark">
-</div>
+          </div>
+          <div class="image">
+            <img
+              src="piggie_question.png"
+              class="piggie_question"
+              alt="piggie with a question mark"
+            />
+          </div>
           <input type="submit" value="confirm" class="submit" />
         </span>
       </form>
     </main>
-<div class="categories">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+    <h2>Here's how you spent your money this week</h2>
+    <div class="categories">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <script src="script.js"></script>
   </body>
-  <script src="https://kit.fontawesome.com/3ad212d20d.js" crossorigin="anonymous"></script>
+  <script
+    src="https://kit.fontawesome.com/3ad212d20d.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
 
 <!-- form will have to reset on submit of purchase text area -->

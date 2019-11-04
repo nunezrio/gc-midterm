@@ -4,7 +4,9 @@ body {
   background-color: #e2f2ea;
   padding: 0px;
   font-family: "Fredoka One", "Arial Rounded MT", Arial, cursive;
+  margin: 0px;
 }
+
 .mascotTitle {
   display: flex;
   flex-direction: row;
@@ -25,16 +27,12 @@ form {
 h1 {
   background-color: #8ad2c8;
   color: #3d5775;
-  padding: 10px;
+  padding: 20px;
   margin: 0px;
   border-bottom: 2px solid #ff70ac;
 
   font-size: 28px;
   text-transform: uppercase;
-}
-.dollarSign {
-  width: fit-content;
-  margin: 0px;
 }
 
 .weeklyBudget {
@@ -47,8 +45,7 @@ h1 {
 }
 
 .weeklyBudget input[type="text"] {
-  width: 80%;
-  margin: 10px 0px;
+  margin: 5px 0px;
   padding: 10px 5px;
   border-radius: 5px;
   border: none;
@@ -60,6 +57,7 @@ h1 {
 ::placeholder {
   color: #3d5775;
   text-transform: uppercase;
+  font-family: "FontAwesome";
 }
 .displayBudget {
   background-color: #bdd5ea;
@@ -83,7 +81,6 @@ h1 {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 20px;
-  margin-left: ;
 }
 #cost {
   width: 80%;
@@ -108,15 +105,20 @@ label {
   margin: 5px auto;
   border-radius: 5px;
   width: 100%;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   background-color: #ebcaef;
 }
 
 .radio {
   display: flex;
   flex-direction: column;
-  margin: 20px 0px;
+  margin: 30px 0px;
   width: 50%;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  margin: 10px;
 }
 
 .itemInput {
@@ -141,9 +143,15 @@ h2 {
   width: 200px;
   height: 200px;
   flex-grow: 1;
+  float: right;
 }
-.categories {
+
+#cost {
+  width: 100%;
 }
 
 @media screen and (min-width: 760px) {
+  form {
+    width: 60%;
+  }
 }
